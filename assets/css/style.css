@@ -1,0 +1,768 @@
+/* DESKTOP */ 
+@media screen and (min-width:781px) and (max-width:1440px) {
+
+    /* MODIFICAÇÕES GERAIS */
+    .titulo {
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+        font-family: sans-serif;
+        line-height: 1.5;
+        color: #fff;
+    }
+
+    .titulo::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 5px;
+        background: #FFDF5D;
+        border-radius: 5px;
+        margin: 5px auto;
+    }
+
+    p{ 
+        text-align: justify;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #fff;
+    }
+
+
+
+    /* HEADER DO SITE */
+
+    .fundoMulher {
+        position: absolute;
+        top: 10%;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 90vh;
+        margin: 0 auto;
+    }
+
+    .mulher {
+        height: 90vh;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .svg-menu__path__seleccion, .svg-menu__path__seleccion * {transition: all 1s ease-out;}
+
+    .svg-menu__path__seleccion {transform-origin: 50% 40%;}
+
+    .svg-menu__path__seleccion:hover, .svg-menu__path__seleccion.active {transform: scale(1.1);}
+
+    .svg-menu__path__seleccion:hover .svg-menu__path__seleccion__background *, .svg-menu__path__seleccion.active .svg-menu__path__seleccion__background * {fill: #FFF;}
+
+
+    .fundoDoSite {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; /* temos duas possibilidades "contain" ou "cover*. Contain vai redimencionar a imagem sem ultrapassar o tamanho da área do conteúdo e sem distorce a imagem. O Cover vai realizar o oposto de tudo */
+        width: 100%;
+        height: 100vh; /* Unidade de medida que se baseia no tamanho de tela exibido para cada tamanho de tela */
+        position: relative;
+    }
+
+    header {
+        top: 0;
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 150px;
+        z-index: 2;
+    }
+
+    .logoDoSite {
+        width: 60%;
+        transition: 0.5s;
+    }
+
+    .logoDoSite:hover {
+        transform: scale(1.1);
+    }
+
+    .navMenuDesktop {
+        display: flex;
+        padding: 5px;   
+    }
+
+    .navMenuItemDesktop {
+        font-size: 16px;
+        font-weight: bold;
+        font-family: "Montsserat", sans-serif;
+        margin: 0 20px;
+        position: relative;
+        text-transform: uppercase;
+    }
+
+    .navMenuItemDesktop:hover {
+        color: #9e0000;
+    }
+
+    .navMenuItemDesktop a::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: #9e0000;
+        transition: 0.3s;
+    }
+
+    .navMenuItemDesktop a:hover::before {
+        width: 100%;
+    }
+
+    /* Tirando o menu e os ícone do Desktop */
+    .navMobile {
+        display: none;
+    }
+
+    .iconeMenuMobile {
+        display: none;
+    }
+
+    .buttomMenuMobile {
+        display: none;
+    }
+
+    .blocoSeta {
+        position: absolute;
+        width: 100px;
+        top: 75%;
+        left: 50%;
+        z-index: 3;
+    }
+
+    .seta {
+        
+        display: flex;
+        flex-direction: column; 
+        cursor: pointer;
+    }
+    
+    .seta span {
+        border-bottom: 1px solid #fff;
+        border-right: 1px solid #fff;
+        width: 30px;
+        height: 30px;   
+        transform: rotate(45deg);
+        animation: arrow 2s infinite;
+    }
+
+    .seta span:nth-child(2), .seta span:nth-child(3) {
+        animation: arrow 2s infinite;
+        animation-delay: 0.2s;
+        transform: rotate(45deg);
+    }
+
+    
+    @keyframes arrow {
+        0% {
+            opacity: 1;
+        }        
+        100% {
+            opacity: 0;
+            transform: translateY(30px) rotate(45deg);
+        }
+    } 
+
+    /* MAIN DO SITE */
+    main {
+        z-index: 2;
+        background: #652E30;
+        margin-top: -5px;
+    }
+    .conteudoMitologia {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+       
+    }
+
+    .mitologia {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .buttomLeiaMais {
+        cursor: pointer;
+        position: relative;
+        width: 140px;
+        height: 60px;
+        font-size: 18px;
+        font-family: sans-serif;
+        color: #fff;
+        font-weight: bold;
+        border-color: #fff;
+        border-radius: 20px;
+        background-color: transparent;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .buttomLeiaMais:hover {
+        color: #000;
+    }
+
+    .buttomLeiaMais::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        opacity: .5;
+        transition: 0.3s;
+        border-radius: 20px;
+        z-index: -1;
+    }
+
+    .buttomLeiaMais::after {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: .6s;
+        border-radius: 20px;
+        z-index: -1;
+    }
+
+    .buttomLeiaMais:hover::before {
+        top: 0;
+    }
+    
+    .buttomLeiaMais:hover::after {
+        top: 0;
+    }
+
+
+    .conteudoSobre {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+
+    .sobre {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .sobreDiv {
+        display: flex;
+    }
+
+    .sobreDiv p {
+        width: 60%;
+    }
+
+    .imgLogo {
+        width: 30%;
+        border-radius: 100px;
+        background: #fff;
+        margin-left: 100px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 20px 20px 80px #000;
+        animation: balanço 4s infinite alternate;
+    }
+
+    .imgLogo img {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 250px;
+    }
+
+    @keyframes balanço {
+        100% {
+            transform: scale(1.1);
+        }
+    }
+
+
+/* Footer - Rodapé do site */
+    footer {
+        height: 50vh;
+        background: #cccccc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menuRodape {
+        width: 80%;
+        height: 140px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .menuRodape ul {
+        height: 140px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    
+    .menuRodapeTitulo {
+        font-size: 16px;
+        font-family: sans-serif;
+        line-height: 1.5;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .item {
+        font-size: 14px;
+        font-family: sans-serif;
+        color: #000;
+        line-height: 1.5;
+    }
+
+    .copyright {
+        width: 100%;
+        height: 100px;
+        background: #652E30;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .copyright p{
+        text-align: center;
+        color: #fff;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+
+
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 780px) {
+    /* MODIFICAÇÕES GERAIS */
+    .titulo {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        font-family: sans-serif;
+        line-height: 1.5;
+        color: #fff;
+    }
+
+    .titulo::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 5px;
+        background: #FFDF5D;
+        border-radius: 5px;
+        margin: 5px auto;
+    }
+
+    p{ 
+        text-align: justify;
+        font-family: sans-serif;
+        font-size: 13px;
+        line-height: 2;
+        color: #fff;
+    }
+
+    /* CABEÇALHO */
+
+    .fundoMulher {
+        display: none;
+    }
+
+    .fundoDoSite {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; /* temos duas possibilidades "contain" ou "cover*. Contain vai redimencionar a imagem sem ultrapassar o tamanho da área do conteúdo e sem distorce a imagem. O Cover vai realizar o oposto de tudo */
+        width: 100%;
+        height: 100vh; /* Unidade de medida que se baseia no tamanho de tela exibido para cada tamanho de tela */
+    }
+
+    header {
+        top: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    header .divLogo {
+        display: flex;
+        justify-content: center;
+        margin-top: 10%;
+    }
+
+    .logoDoSite {
+        width: 80%;
+    }
+
+    /* Desaparecer com o menu do Desktop */
+    .navDesktop {
+        display: none;
+    }
+
+    .iconeMenuMobile {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        width: 80px;
+        height: 80px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .iconeMenuMobile span {
+        width: 40px;
+        height: 5px;
+        margin: 2px 0;
+        background: #000;
+    } 
+
+    .buttomMenuMobile {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        width: 80px;
+        height: 80px;
+        z-index: 2;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttomMenuMobile .cima {
+        width: 20px;
+        height: 20px;
+        border-bottom: 3px solid #9e0000;
+        border-right: 3px solid #9e0000;
+        transform: rotate(45deg);
+        display: block;
+        margin-bottom: 2.5px;
+    }
+
+    .buttomMenuMobile .baixo {
+        width: 20px;
+        height: 20px;
+        border-top: 3px solid #9e0000;
+        border-right: 3px solid #9e0000;
+        transform: rotate(-45deg);
+        display: block;
+        margin-top: 2.5px;
+    }
+
+    .navMobile {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #333;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;  
+        transition: 1s;      
+    }
+
+    .navMenuMobile {
+        width: 100%;
+    }
+
+    .navMenuItemMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        position: relative;
+    }
+
+    .navMenuItemMobile a::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0px;
+        height: 3px;
+        background: #FFDF5D;
+        border-radius: 5px;
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+    .navMenuItemMobile a:hover::after {
+        width: 100%;
+    }
+
+    .navMenuItemMobile a {
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    .blocoSeta {
+        position: absolute;
+        width: 100px;
+        top: 70%;
+        left: 50%;
+    }
+
+    .seta {
+        display: flex;
+        flex-direction: column; 
+        cursor: pointer;
+    }
+    
+    .seta span {
+        border-bottom: 1px solid #fff;
+        border-right: 1px solid #fff;
+        width: 20px;
+        height: 20px;   
+        transform: rotate(45deg);
+        animation: arrow 2s infinite;
+    }
+
+    .seta span:nth-child(2), .seta span:nth-child(3) {
+        animation: arrow 2s infinite;
+        animation-delay: 0.2s;
+        transform: rotate(45deg);
+    }
+
+    /* MENU MOBILE APARECER E SUMIR */
+    .navMobileAtivo {
+        right: 0;
+    }
+
+    .desativado {
+        display: none;
+    }
+
+    .ativo {
+        display: flex;
+    }
+
+    
+
+    
+    @keyframes arrow {
+        0% {
+            opacity: 1;
+        }        
+        100% {
+            opacity: 0;
+            transform: translateY(30px) rotate(45deg);
+        }
+    }
+
+    /* MAIN DO SITE */
+    main {
+        background: #652E30;
+        margin-top: -10px;
+        padding-top: 20px;
+    }
+    .conteudoMitologia {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mitologia {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .conteudoSobre {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 40px 0 80px;
+    }
+
+    .sobre {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .sobreDiv {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .imgLogo {
+        width: 120px;
+        height: 120px;
+        border-radius: 20%;
+        margin-top: 40px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        box-shadow: 30px 30px 80px #000;
+        animation: balanço 4s infinite alternate;
+    }
+
+    .imgLogo img {
+        width: 100px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    @keyframes balanço {
+        100% {
+            transform: scale(1.1);
+        }
+    }
+
+    .buttomLeiaMais {
+        cursor: pointer;
+        position: relative;
+        width: 140px;
+        height: 60px;
+        font-size: 18px;
+        font-family: sans-serif;
+        color: #fff;
+        font-weight: bold;
+        border-color: #fff;
+        border-radius: 20px;
+        background-color: transparent;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .buttomLeiaMais:hover {
+        color: #000;
+    }
+
+    .buttomLeiaMais::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        opacity: .5;
+        transition: 0.3s;
+        border-radius: 20px;
+        z-index: -1;
+    }
+
+    .buttomLeiaMais::after {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: .6s;
+        border-radius: 20px;
+        z-index: -1;
+    }
+
+    .buttomLeiaMais:hover::before {
+        top: 0;
+    }
+    
+    .buttomLeiaMais:hover::after {
+        top: 0;
+    }
+
+    /* Footer - Rodapé do site */
+    footer {
+        height: auto;
+        background: #cccccc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menuRodape {
+        width: 80%;
+        height: 120vh;
+        padding: 20px 0;
+    }
+
+    .menuRodape ul {
+        margin: 40px 0;
+        text-align: center;
+    }
+    
+    .menuRodapeTitulo {
+        font-size: 16px;
+        font-family: sans-serif;
+        line-height: 1.5;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .item {
+        font-size: 14px;
+        font-family: sans-serif;
+        color: #000;
+        line-height: 1.5;
+    }
+
+    .copyright {
+        width: 100%;
+        height: 100px;
+        background: #652E30;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .copyright p{
+        text-align: center;
+        color: #fff;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+}
