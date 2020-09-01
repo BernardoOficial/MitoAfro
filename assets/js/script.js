@@ -4,13 +4,13 @@ var icone = document.querySelector(".iconeMenuMobile");
 var navMobile = document.querySelector(".navMobile");
 var buttomMenuMobile = document.querySelector(".buttomMenuMobile");
 
-icone.addEventListener("click", function() {
+icone.addEventListener("click", function () {
     navMobile.classList.add("navMobileAtivo");
     icone.classList.add("desativado");
     buttomMenuMobile.classList.add("ativo");
 });
 
-buttomMenuMobile.addEventListener("click", function() {
+buttomMenuMobile.addEventListener("click", function () {
     navMobile.classList.add("navMobile");
     navMobile.classList.remove("navMobileAtivo");
     icone.classList.add("iconeMenuMobile");
@@ -25,28 +25,33 @@ buttomMenuMobile.addEventListener("click", function() {
 
 /* SCROLL SUAVE */
 
-function scrollSuave() {
+const link = document.querySelector('[data-link]');
+link.addEventListener('click', scrollSuave);
 
-    event.preventDefault()
+function scrollSuave(evento) {
 
-    let section = document
-        .querySelector('#section')
+    evento.preventDefault()
 
-    let pos = 0;
+    let section = document.querySelector('#section').offsetTop;
+
+    let posYWindow = window.pageYOffset;
+    let pos = posYWindow;
+
     let id = setInterval(animation, 1)
 
     function animation() {
-        if(pos == 630) {
+
+        if (pos >= section) {
             clearInterval(id) // Para o setInterval
         }
         else {
-            pos += 2
-            window.scroll(0, pos) 
-            console.log(window.scroll(0, pos))
+            pos += 4;
+            window.scrollTo(0, pos)
+            // console.log(window.scroll(0, pos))
         }
     }
-    
-    
+
+
     // console.log(window.scroll)
     // O window.scroll se baseia em relação ao scroll da página.
     // console.log(section.offsetTop)
@@ -57,3 +62,16 @@ function scrollSuave() {
     // console.log(id);
 
 }
+
+// ----Elemento HTML: ---
+// <button data-link-desce>Clique para descer 100 pixels</button>
+
+// const link = document.querySelector('[data-link-desce]');
+// link.addEventListener('click', (evento) => {
+
+//     evento.preventDefault();
+
+//     // Vai descer 100px sempre em relação ao todo da página.
+//     window.scroll(0, 100);
+//     // window.scrollTo(0, 100);
+// })
